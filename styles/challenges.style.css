@@ -1,0 +1,126 @@
+html{
+    font-size: 100%;
+}
+
+.ch-head {
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: 'Orbitron', sans-serif;
+}
+.container .ch-head h2{
+    text-align: center !important;
+}
+
+.ch-head h2{
+    color: #8888A0;
+}
+
+@media only screen and (max-width:600px) {
+    .card{padding: 20px;}
+}
+.card:hover{
+    box-shadow: 10px 10px 10px -3px rgba(73, 93, 207, 0.20012);
+    transition: all 0.5s ease-in-out;
+}
+.chal-card-body{
+    padding-top: 5px;
+}
+
+.chal-card-img{
+    overflow: hidden;
+}
+
+.card img{
+    padding:0px;
+    transition: all 0.4s ease-in-out;
+}
+
+.card img:hover{
+    transform: scale(1.04);
+}
+
+.card-body{
+    padding: 2.25rem;
+}
+
+.card-body p{
+    font-size: 15px;
+    padding: 5px !important;
+    color: #8888A0;
+    font-family: 'Rubik', sans-serif;
+}
+
+.card-body h5{
+    padding: 10px;
+    font-weight: 700;
+    line-height: 0.7;
+}
+
+.card-body .btn{
+    width: 100%;
+    padding: .975rem .75rem;
+}
+
+.chall-but{
+    align-content: center;
+}
+
+.btn--voi{
+    background-color:#6c63ff;
+}
+.btn--voi:hover{
+    box-shadow: 5px 5px 8px -3px rgba(73, 93, 207, 0.20012);
+    transition: all 0.5s ease-in-out;
+}
+
+ .btn--blue {
+  
+  
+    background-color:#6c63ff;
+    color: white;
+  }
+  
+  .btn--blue:hover {
+    background-color: white;
+    color: #6c63ff;
+  }
+
+  .card-title{
+    font-family: 'Orbitron', sans-serif;;
+  }
+
+ .challenges .card{
+      padding: 0px;
+  }
+
+  .card{
+      padding: 0px;
+  }
+
+  .challenges .container {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .colc1{
+    width:70%; 
+    float:left;
+  }
+
+  .colc2{
+    width:30%; 
+    float:left;
+  }
+
+  .colc2 p{
+    color: #6c63ff; 
+  }
+
+  .chalbg{
+    background: url('img/finalbgdone.png') no-repeat ;
+    background-size: contain;
+    background-repeat:repeat;
+}
