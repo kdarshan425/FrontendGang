@@ -114,12 +114,12 @@ else{
             <form action="admin.login.php" method="post">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <center> <input name="loginEmail" type="email" class="form-control input-field" id="exampleInputEmail1" aria-describedby="emailHelp"></center>
+                    <center> <input name="loginEmail" type="email" class="form-control input-field" id="exampleInputEmail1" aria-describedby="emailHelp" required></center>
                    
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <center><input name="loginPass" type="password" class="form-control input-field" id="exampleInputPassword1"></center>
+                    <center><input name="loginPass" type="password" class="form-control input-field" id="exampleInputPassword1" required></center>
                 </div>
 
                 <div style="padding-top:30px;"><button type="submit"  class="forum-btn btn-f">Submit</button></div>                
