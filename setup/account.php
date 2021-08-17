@@ -118,16 +118,16 @@ if(isset($_SESSION["founderloggedin"]) && $_SESSION["founderloggedin"]==true){
             </div>
             <form action="<?php $_SERVER["REQUEST_URI"]?>" method="post">
                 <div class="mb-3">                    
-                    <center> <input name="signupEmail" placeholder="Email" type="email" class="form-control input-field" id="exampleInputEmail1" aria-describedby="emailHelp"></center>
+                    <center> <input name="signupEmail" placeholder="Email" type="email" class="form-control input-field" id="exampleInputEmail1" aria-describedby="emailHelp" required></center>
                 </div>
                 <div class="mb-3">
-                    <center> <input name="userName" placeholder="Username" type="text" class="form-control input-field" id="exampleInputEmail1" aria-describedby="emailHelp"></center>
+                    <center> <input name="userName" placeholder="Username" type="text" class="form-control input-field" id="exampleInputEmail1" aria-describedby="emailHelp" required></center>
                 </div>
                 <div class="mb-3">
-                    <center><input name="signupPassword" placeholder="Password" type="password" class="form-control input-field" id="exampleInputPassword1"></center>
+                    <center><input name="signupPassword" placeholder="Password" type="password" class="form-control input-field" id="exampleInputPassword1" required></center>
                 </div>
                 <div class="mb-3">
-                    <center><input name="signupcPassword" placeholder="Confirm password" type="password" class="form-control input-field" id="exampleInputPassword1"></center>
+                    <center><input name="signupcPassword" placeholder="Confirm password" type="password" class="form-control input-field" id="exampleInputPassword1" required></center>
                 </div>
 
                 <div style="padding-top:30px;"><button type="submit" name="submit" class="forum-btn btn-f">Submit</button></div>                
