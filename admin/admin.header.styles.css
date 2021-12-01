@@ -1,0 +1,96 @@
+.logtopsidebar a{
+    font-family: 'Archivo', sans-serif ;
+    font-weight: 100;
+    text-decoration: none;
+}
+.mainlogo{
+    height:35px !important;
+    width:35px !important;
+  }
+  @media screen and (max-width: 321px) {
+    .mainlogo{
+      display:none !important;
+      height:35px;
+      width:35px;
+    }
+    
+  }
+  .sidebar1 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: white;   
+    height: 100vh;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    z-index: 101;    
+    display: block;
+    position: fixed;
+    width: 25%;
+    box-shadow: 0px 10px 20px -5px rgb(73 93 207 / 20%);
+    }
+    
+    
+    .row1{
+        width:100%;
+    }
+    
+    .row {
+    display: flex !important;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+    .col1{
+        width:25%;
+        overflow:auto;
+        display:block;
+        padding-left:0px;
+    }
+
+    .col2{
+        width:75%;
+        overflow:auto;
+        float: right !important; 
+    }
+
+    @media screen and (max-width:800px) {
+        .col1{
+        width:0%;
+        display:none;
+        overflow:auto;
+    }
+
+    .col2{
+        width:100%;
+        overflow:auto;
+    }
+    }
+     
+    .card1{
+        box-shadow: 0px 10px 20px -5px rgb(73 93 207 / 20%);
+        border: none ;
+    }
+    ::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f3f3f3;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: lightgray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+a:hover {
+    color: #0056b3;
+    /* text-decoration: underline; */
+}

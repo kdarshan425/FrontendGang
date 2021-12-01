@@ -1,0 +1,362 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Aug 14, 2021 at 07:59 AM
+-- Server version: 5.7.26
+-- PHP Version: 7.2.18
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `fg`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `certficate_status`
+--
+
+DROP TABLE IF EXISTS `certficate_status`;
+CREATE TABLE IF NOT EXISTS `certficate_status` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `certificate_id` int(3) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `image_name` varchar(255) DEFAULT 'not generated',
+  `status` int(2) DEFAULT NULL,
+  `timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `certficate_status`
+--
+
+INSERT INTO `certficate_status` (`id`, `certificate_id`, `user_id`, `image_name`, `status`, `timestamp`) VALUES
+(20, 1, 27, '20.jpg', 2, '2021-05-28 14:48:15'),
+(28, 2, 27, '28.jpg', 2, '2021-06-12 20:11:10'),
+(29, 3, 27, '29.jpg', 2, '2021-06-12 20:18:22'),
+(36, 4, 27, '36.jpg', 2, '2021-08-13 21:29:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `certificate`
+--
+
+DROP TABLE IF EXISTS `certificate`;
+CREATE TABLE IF NOT EXISTS `certificate` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `price` int(10) NOT NULL DEFAULT '0',
+  `sample_image` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `certificate`
+--
+
+INSERT INTO `certificate` (`id`, `name`, `image`, `price`, `sample_image`) VALUES
+(1, 'Basecamp', 'img/begineer_certificate.jpg', 200, 'certificates/20.jpg'),
+(2, 'Moderate', 'img/Moderate_certificate.jpg', 300, 'certificates/28.jpg'),
+(3, 'Advanced', 'img/Expert_certificate.jpg', 400, 'certificates/29.jpg'),
+(4, 'Challenger', 'img/Challenger_certificate.jpg', 0, 'certificates/36.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `challenges`
+--
+
+DROP TABLE IF EXISTS `challenges`;
+CREATE TABLE IF NOT EXISTS `challenges` (
+  `challenge_id` int(11) NOT NULL AUTO_INCREMENT,
+  `challenged_by` varchar(200) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `mobile_image` varchar(200) DEFAULT NULL,
+  `tablet_image` varchar(200) DEFAULT NULL,
+  `laptop_image` varchar(200) DEFAULT NULL,
+  `languages` varchar(255) DEFAULT NULL,
+  `level` varchar(255) DEFAULT NULL,
+  `challenge_heading` text,
+  `challenge_desc` text,
+  `uploaded_file` varchar(255) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`challenge_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `challenges`
+--
+
+INSERT INTO `challenges` (`challenge_id`, `challenged_by`, `image`, `mobile_image`, `tablet_image`, `laptop_image`, `languages`, `level`, `challenge_heading`, `challenge_desc`, `uploaded_file`, `created`) VALUES
+(31, 'try25@try25.com', 'temp.png', 'mobile.png', 'tablet.png', 'laptop.png', 'HTML CSS JS', 'Medium', 'FAQ Section', 'This is Frequently Asked Questions section, having different FAQ questions and on clicking the question you will get the answer of that question, your task is to develop same FAQ section as given. Feel free to add any effects like hover, animations, etc.upload your code on github or repl.it submit that as code link and publish it to github pages or repl.it submit that link as live url.', 'faq.zip', '2021-07-26 10:55:54'),
+(32, 'try25@try25.com', 'template.png', 'mobile.png', 'tablet.png', 'laptop.png', 'HTML CSS', 'Simple', 'category component', 'This is a simple category component having two categories i.e. men and women, your task is to develop same section as given. Feel free to add any effects like hover, animations, etc.upload your code on github or repl.it submit that as code link and publish it to github pages or repl.it submit that link as live url.', 'category.zip', '2021-07-26 11:05:40'),
+(33, 'try25@try25.com', 'template.png', 'mobile.PNG', 'tablet.PNG', 'laptop.PNG', 'HTML CSS JS BOOTSTRAP', 'Hard', 'Simple landing page design', 'This is a simple landing page design, your task is to develop same design as given. Challanges, Challenger, Rewards this are three sections you have to display on clicking respective names, you can use any images here. Feel free to add any effects like hover, animations, etc.upload your code on github or repl.it submit that as code link and publish it to github pages or repl.it submit that link as live url. ', 'template.zip', '2021-07-26 11:15:38'),
+(34, 'try25@try25.com', 'template.png', 'mobile.png', 'tablet.png', 'laptop.png', 'HTML CSS', 'Simple', 'Contact Us Form', 'This is Contact form template,  your task is to develop same template as given. Feel free to add any effects like hover, animations, etc.upload your code on github or repl.it, submit that as code link and publish it to github pages or repl.it,\r\nsubmit that link as live url.', 'contact.zip', '2021-07-26 11:21:36'),
+(35, 'try25@try25.com', 'temp.png', 'mob.png', 'tab.png', 'lap.png', 'HTML CSS JS', 'Medium', 'E-commerce Landing Template with navbar', 'This is landing template for E-commerce website including navbar, every component should be completely responsive, your task is to develop same template as given. Feel free to add any effects like hover, animations, etc.upload your code on github or repl.it submit that as code link and publish it to github pages or repl.it submit that link as live url.', 'simple landing.zip', '2021-07-26 11:31:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `challenges_by_users`
+--
+
+DROP TABLE IF EXISTS `challenges_by_users`;
+CREATE TABLE IF NOT EXISTS `challenges_by_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `language` varchar(255) DEFAULT NULL,
+  `level` varchar(10) DEFAULT NULL,
+  `title` text,
+  `chal_desc` text,
+  `live_url` text,
+  `code_url` text,
+  `challenged_by` varchar(255) DEFAULT NULL,
+  `user_file` varchar(255) DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `challenges_by_users`
+--
+
+INSERT INTO `challenges_by_users` (`id`, `language`, `level`, `title`, `chal_desc`, `live_url`, `code_url`, `challenged_by`, `user_file`, `timestamp`) VALUES
+(29, 'Html css js php mysql', 'Medium', 'Basic Banking System27', 'Create a simple dynamic website which has the following specs.\r\nStart with creating a dummy data in database for upto 10 customers. Database options: Mysql, Mongo, Postgres, etc. Customers table will have basic fields such as name, email, current balance etc. Transfers table will record all transfers happened.\r\nFlow: Home Page &gt; View all Customers &gt; Select and View one Customer &gt; Transfer Money &gt; Select customer to transfer to &gt; View all Customers .\r\nNo Login Page. No User Creation. Only transfer of money between multiple users.\r\nHost the website at 000webhost, github.io, heroku app or any other free hosting provider. Check in code in gitlab.', ' https://thegripbank.herokuapp.com/', 'https://github.com/kdarshan425/thegripbank', 'try25@try25.com', 'img.zip', '2021-08-13 08:33:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE IF NOT EXISTS `comments` (
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `comment_content` text,
+  `thread_id` int(11) DEFAULT NULL,
+  `cat_id` varchar(255) DEFAULT NULL,
+  `comment_by` varchar(255) DEFAULT NULL,
+  `comment_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+CREATE TABLE IF NOT EXISTS `contact` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `email`, `name`, `title`, `description`, `timestamp`) VALUES
+(2, 'kdarshan425@gmail.com', 'Darshan Khope', 'Best Website ever', 'Best website design ever! Best of luck!', '2021-08-13 16:29:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment`
+--
+
+DROP TABLE IF EXISTS `payment`;
+CREATE TABLE IF NOT EXISTS `payment` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `amount` int(10) DEFAULT NULL,
+  `payment_status` varchar(255) DEFAULT NULL,
+  `payment_id` varchar(255) DEFAULT NULL,
+  `added_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reset_password`
+--
+
+DROP TABLE IF EXISTS `reset_password`;
+CREATE TABLE IF NOT EXISTS `reset_password` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `setup`
+--
+
+DROP TABLE IF EXISTS `setup`;
+CREATE TABLE IF NOT EXISTS `setup` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `verification_email` varchar(255) DEFAULT NULL,
+  `verification_email_password` varchar(255) DEFAULT NULL,
+  `account_status` varchar(255) DEFAULT NULL,
+  `api_key` varchar(255) DEFAULT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `payment_description` varchar(255) DEFAULT NULL,
+  `logo_url` varchar(255) DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `threads`
+--
+
+DROP TABLE IF EXISTS `threads`;
+CREATE TABLE IF NOT EXISTS `threads` (
+  `thread_id` int(11) NOT NULL AUTO_INCREMENT,
+  `thread_title` varchar(255) DEFAULT NULL,
+  `thread_desc` varchar(255) DEFAULT NULL,
+  `thread_cat_id` int(11) DEFAULT NULL,
+  `thread_user_id` int(11) DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`thread_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `sno` int(11) NOT NULL AUTO_INCREMENT,
+  `user_email` varchar(30) DEFAULT NULL,
+  `position` varchar(10) DEFAULT NULL,
+  `user_name` varchar(255) DEFAULT NULL,
+  `user_pass` varchar(255) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `account_status` varchar(255) DEFAULT NULL,
+  `user_score` int(11) NOT NULL DEFAULT '0',
+  `Name` varchar(255) DEFAULT NULL,
+  `City` varchar(100) DEFAULT NULL,
+  `State` varchar(100) DEFAULT NULL,
+  `Country` varchar(100) DEFAULT NULL,
+  `Gender` varchar(50) DEFAULT NULL,
+  `Website` varchar(255) DEFAULT NULL,
+  `Bio` varchar(1000) DEFAULT NULL,
+  `Github_link` varchar(255) DEFAULT NULL,
+  `Youtube_link` varchar(255) DEFAULT NULL,
+  `LinkedIn_link` varchar(255) DEFAULT NULL,
+  `Twitter_link` varchar(255) DEFAULT NULL,
+  `timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`sno`)
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`sno`, `user_email`, `position`, `user_name`, `user_pass`, `token`, `account_status`, `user_score`, `Name`, `City`, `State`, `Country`, `Gender`, `Website`, `Bio`, `Github_link`, `Youtube_link`, `LinkedIn_link`, `Twitter_link`, `timestamp`) VALUES
+(27, 'try25@try25.com', 'Founder', 'try25', '$2y$10$8fopbZOCI6CNy6jgGDCRDuT/cVHjmywOnyt3P9pK2/h5gdaC7iGyC', '', 'Active', 300, 'Darshan Subhash Khope', 'Pune', 'Maharashtra', 'India', 'Male', '', '', '', '', '', '', '2021-05-17 10:15:17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_challenges`
+--
+
+DROP TABLE IF EXISTS `users_challenges`;
+CREATE TABLE IF NOT EXISTS `users_challenges` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `challenge_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `status_challenge` varchar(255) DEFAULT NULL,
+  `challengename` varchar(255) DEFAULT NULL,
+  `liveurl` varchar(255) DEFAULT NULL,
+  `codelink` varchar(255) DEFAULT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users_challenges`
+--
+
+INSERT INTO `users_challenges` (`id`, `challenge_id`, `user_id`, `status_challenge`, `challengename`, `liveurl`, `codelink`, `time`) VALUES
+(131, 33, 27, 'Started', NULL, NULL, NULL, '2021-08-13 16:06:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_success_payment`
+--
+
+DROP TABLE IF EXISTS `user_success_payment`;
+CREATE TABLE IF NOT EXISTS `user_success_payment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_email` varchar(100) DEFAULT NULL,
+  `user_challenge_id` int(11) DEFAULT NULL,
+  `status` text,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user_success_payment`
+--
+
+INSERT INTO `user_success_payment` (`id`, `user_email`, `user_challenge_id`, `status`, `timestamp`) VALUES
+(3, 'try25@try25.com', 1, 'Pending', '2021-05-30 17:30:34');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `challenges`
+--
+ALTER TABLE `challenges` ADD FULLTEXT KEY `challenge_heading` (`challenge_heading`,`challenge_desc`);
+ALTER TABLE `challenges` ADD FULLTEXT KEY `level` (`level`,`languages`);
+ALTER TABLE `challenges` ADD FULLTEXT KEY `challenge_heading_2` (`challenge_heading`,`challenge_desc`,`level`,`languages`);
+
+--
+-- Indexes for table `challenges_by_users`
+--
+ALTER TABLE `challenges_by_users` ADD FULLTEXT KEY `title` (`title`,`chal_desc`,`challenged_by`);
+
+--
+-- Indexes for table `threads`
+--
+ALTER TABLE `threads` ADD FULLTEXT KEY `thread_title` (`thread_title`,`thread_desc`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
